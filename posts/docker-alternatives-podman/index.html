@@ -1,0 +1,312 @@
+<!doctype html><html lang=en>
+<head>
+<meta charset=utf-8>
+<meta name=viewport content="width=device-width,initial-scale=1">
+<title>Podman 시작하기 - evir35's blog</title><link rel=apple-touch-icon href=https://evir35.github.io/images/icons/icon-180x180.png sizes=180x180>
+<link rel=icon href=https://evir35.github.io/images/icons/icon-32x32.png sizes=32x32 type=image/png>
+<link rel=icon href=https://evir35.github.io/images/icons/icon-16x16.png sizes=16x16 type=image/png>
+<link rel=icon href=https://evir35.github.io/images/icons/favicon.ico>
+<link rel=manifest href=https://evir35.github.io/manifest.json>
+<meta name=keywords content>
+<meta name=description content="Docker desktop의 유료화 대부분의 사용자들이 Container를 접하는 것은 Docker를 통해서 접하고 있을 것입니다. Linux distribution(e.g. Ubuntu, CentOS, &mldr;)을 사용하는 User는 문제가 없지만 Windows나 MacOS에서는 Docker를 그대로 사용할 수 없고, 가상화를 통해서만 사용이 가능합니다. 이러한 사용자들의 불편함을 줄여주기 위해 등장한 것이 바로 Docker desktop입니다. Docker desktop은 LinuxKit을 이용하여 Docker를 사용할 수 있는 Virtual Machine을 Windows나 MacOS에서 자동으로 구축하여 Docker를 사용할 수 있는 환경을 만들어 줍니다. 이러한 Docker desktop이 Business 목적으로 사용될 경우 유료로 전환되었습니다."><meta itemprop=name content="Podman 시작하기">
+<meta itemprop=description content="Docker desktop의 유료화 대부분의 사용자들이 Container를 접하는 것은 Docker를 통해서 접하고 있을 것입니다. Linux distribution(e.g. Ubuntu, CentOS, &mldr;)을 사용하는 User는 문제가 없지만 Windows나 MacOS에서는 Docker를 그대로 사용할 수 없고, 가상화를 통해서만 사용이 가능합니다. 이러한 사용자들의 불편함을 줄여주기 위해 등장한 것이 바로 Docker desktop입니다. Docker desktop은 LinuxKit을 이용하여 Docker를 사용할 수 있는 Virtual Machine을 Windows나 MacOS에서 자동으로 구축하여 Docker를 사용할 수 있는 환경을 만들어 줍니다. 이러한 Docker desktop이 Business 목적으로 사용될 경우 유료로 전환되었습니다."><meta itemprop=datePublished content="2022-02-20T17:05:53+09:00">
+<meta itemprop=dateModified content="2022-02-20T17:05:53+09:00">
+<meta itemprop=wordCount content="556">
+<meta itemprop=keywords content="container,docker,podman,"><meta property="og:title" content="Podman 시작하기">
+<meta property="og:description" content="Docker desktop의 유료화 대부분의 사용자들이 Container를 접하는 것은 Docker를 통해서 접하고 있을 것입니다. Linux distribution(e.g. Ubuntu, CentOS, &mldr;)을 사용하는 User는 문제가 없지만 Windows나 MacOS에서는 Docker를 그대로 사용할 수 없고, 가상화를 통해서만 사용이 가능합니다. 이러한 사용자들의 불편함을 줄여주기 위해 등장한 것이 바로 Docker desktop입니다. Docker desktop은 LinuxKit을 이용하여 Docker를 사용할 수 있는 Virtual Machine을 Windows나 MacOS에서 자동으로 구축하여 Docker를 사용할 수 있는 환경을 만들어 줍니다. 이러한 Docker desktop이 Business 목적으로 사용될 경우 유료로 전환되었습니다.">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://evir35.github.io/posts/docker-alternatives-podman/"><meta property="article:section" content="posts">
+<meta property="article:published_time" content="2022-02-20T17:05:53+09:00">
+<meta property="article:modified_time" content="2022-02-20T17:05:53+09:00">
+<meta name=twitter:card content="summary">
+<meta name=twitter:title content="Podman 시작하기">
+<meta name=twitter:description content="Docker desktop의 유료화 대부분의 사용자들이 Container를 접하는 것은 Docker를 통해서 접하고 있을 것입니다. Linux distribution(e.g. Ubuntu, CentOS, &mldr;)을 사용하는 User는 문제가 없지만 Windows나 MacOS에서는 Docker를 그대로 사용할 수 없고, 가상화를 통해서만 사용이 가능합니다. 이러한 사용자들의 불편함을 줄여주기 위해 등장한 것이 바로 Docker desktop입니다. Docker desktop은 LinuxKit을 이용하여 Docker를 사용할 수 있는 Virtual Machine을 Windows나 MacOS에서 자동으로 구축하여 Docker를 사용할 수 있는 환경을 만들어 줍니다. 이러한 Docker desktop이 Business 목적으로 사용될 경우 유료로 전환되었습니다.">
+<meta property="og:image" content="https://evir35.github.io/images/logo.png">
+<meta name=twitter:image content="https://evir35.github.io/images/logo.png"><link rel=stylesheet href=https://evir35.github.io/css/main.min.507afbe6e4670fa3e961a0b35816b5daeb36029866fd6bd7b9d7871fcf88faa5.css integrity="sha256-UHr75uRnD6PpYaCzWBa12us2Aphm/WvXudeHH8+I+qU=" crossorigin=anonymous><link rel=stylesheet href=https://evir35.github.io/css/viewer.min.3d228794bcedbbfa0412beb8fbc1ec6973202945e42af7004f742a4d7bd620ab.css integrity="sha256-PSKHlLztu/oEEr64+8HsaXMgKUXkKvcAT3QqTXvWIKs=" crossorigin=anonymous></head>
+<body><script>const items=['mode','palette'];items.forEach(function(a){const b=localStorage.getItem('hbs-'+a);b&&document.body.parentElement.setAttribute('data-'+a,b)})</script><header><nav class="navbar top-app-bar top-app-bar-expand-lg fixed-top">
+<div class=container>
+<button class=navbar-toggler type=button data-bs-toggle=collapse data-bs-target=#navbarSupportedContent aria-controls=navbarSupportedContent aria-expanded=false aria-label="Toggle navigation">
+<i class="fas fa-bars"></i>
+</button><a class="navbar-brand flex-grow-1 flex-lg-grow-0 text-center text-lg-start mx-auto me-lg-3" href=https://evir35.github.io><img class=logo alt=Logo src=https://evir35.github.io/images/logo.webp loading=lazy width=600 height=600>
+evir35's blog
+</a>
+<div class="offcanvas offcanvas-bottom surface" tabindex=-1 id=offcanvasSocialShare aria-labelledby=offcanvasSocialShare>
+<div class=offcanvas-header>
+<h3 class=offcanvas-title>Share</h3>
+<button type=button class="btn btn-sm btn-outline-primary" data-bs-dismiss=offcanvas aria-label=Close>
+<i class="fas fa-times"></i>
+</button>
+</div>
+<div class=offcanvas-body>
+<a class="btn btn-sm btn-outline-primary social-share-button" rel="noopener noreferrer" aria-label="Twitter Share Button" target=_blank href="https://twitter.com/intent/tweet?title=Podman%20%ec%8b%9c%ec%9e%91%ed%95%98%ea%b8%b0&url=https%3a%2f%2fevir35.github.io%2fposts%2fdocker-alternatives-podman%2f">
+<i class="fab fa-fw fa-twitter"></i> Twitter
+</a>
+<a class="btn btn-sm btn-outline-primary social-share-button" rel="noopener noreferrer" aria-label="Facebook Share Button" target=_blank href="https://www.facebook.com/sharer/sharer.php?u=https%3a%2f%2fevir35.github.io%2fposts%2fdocker-alternatives-podman%2f">
+<i class="fab fa-fw fa-facebook-f"></i> Facebook
+</a>
+</div>
+</div>
+<button class=navbar-settings type=button data-bs-toggle=offcanvas data-bs-target=#offcanvasSettings aria-controls=offcanvasSettings aria-label="Toggle settings">
+<i class="fas fa-ellipsis-v"></i>
+</button>
+<div class="offcanvas offcanvas-end surface h-100" tabindex=-1 id=offcanvasSettings aria-labelledby=offcanvasSettings>
+<div class=offcanvas-header>
+<h3 class=offcanvas-title>Settings</h3>
+<button type=button class="btn btn-sm btn-outline-primary" data-bs-dismiss=offcanvas aria-label=Close>
+<i class="fas fa-times"></i>
+</button>
+</div>
+<div class="offcanvas-body d-flex flex-column"><section class=setting>
+<form class=row>
+<div class=col-auto>
+<label for=fontSize class=form-label><i class="fas fa-fw fa-language"></i> Language</label>
+</div>
+<div class="col-auto ms-auto">
+<div class=dropdown>
+<a class="btn btn-sm btn-outline-primary dropdown-toggle" href=# id=languageDropdown role=button data-bs-toggle=dropdown aria-expanded=false>
+English
+</a>
+<ul class="dropdown-menu dropdown-menu-end" aria-labelledby=languageDropdown><li><a class=dropdown-item href=https://evir35.github.io/ko/>한국어</a></li></ul>
+</div>
+</div>
+</form>
+</section>
+<section class=setting>
+<form class=row>
+<div class=col-auto>
+<label><i class="fas fa-fw fa-adjust"></i> Mode</label>
+</div>
+<div class="col-auto ms-auto">
+<div class="form-check form-switch">
+<input class=form-check-input type=checkbox id=modeSwitcher>
+</div>
+</div>
+</form>
+</section>
+<section class="setting actions d-flex justify-content-around mt-auto overflow-auto">
+<a role=button class="action action-go-back" href="javascript: window.history.back();">
+<span class=action-icon><i class="fas fa-2x fa-arrow-left"></i></span> Go back
+</a>
+<a role=button class="action action-reload-page">
+<span class=action-icon><i class="fas fa-2x fa-redo-alt"></i></span> Reload
+</a>
+<a role=button class="action action-copy-url">
+<span class=action-icon><i class="fas fa-2x fa-link"></i></span> Copy URL
+</a><a class="action action-social-share" type=button data-bs-toggle=offcanvas data-bs-target=#offcanvasSocialShare aria-controls=offcanvasSocialShare aria-label="Toggle social share">
+<span class=action-icon><i class="fas fa-2x fa-share-alt"></i></span> Share
+</a></section>
+</div>
+</div>
+<div class="collapse navbar-collapse" tabindex=-1 id=navbarSupportedContent aria-labelledby=navbarSupportedContent>
+<form class="search-bar my-1" action=https://evir35.github.io/search>
+<div class="input-group input-group-sm">
+<span class="btn btn-search disabled position-absolute left-0"><i class="fas fa-fw fa-search"></i></span>
+<input class="form-control rounded-pill" name=q type=search aria-label=Search>
+</div>
+</form>
+<ul class="navbar-nav ms-auto"></ul>
+</div>
+</div>
+</nav>
+</header>
+<main role=main class=container>
+<div class="row content">
+<div class=col-lg-8>
+<div class=container><nav class="row card component" aria-label=breadcrumb>
+<div class=card-body>
+<ol class=breadcrumb><li class=breadcrumb-item><a href=https://evir35.github.io/>Home</a></li><li class=breadcrumb-item><a href=https://evir35.github.io/posts/>Posts</a></li><li class="breadcrumb-item active">Podman 시작하기</li></ol>
+</div>
+</nav><div class=post-panel-wrapper>
+<div class="d-flex flex-column component rounded post-panel">
+<a class="action action-panel-toggler" role=button title="Panel toggler">
+<i class="fas fa-fw fa-chevron-circle-down"></i>
+</a>
+<a id=sidebarToggler class="action d-none d-lg-block" role=button title="Sidebar toggler">
+<i class="fas fa-fw fa-expand-alt" data-fa-transform=rotate-45></i>
+</a>
+<a class=action href=#post-comments role=button aria-label=Comments title=Comments>
+<i class="fas fa-fw fa-comments"></i>
+</a>
+<a class=action href=#postTOC aria-controls="Table of contents" role=button title="Table of contents">
+<i class="fas fa-fw fa-list-alt"></i>
+</a>
+</div>
+</div>
+<article class="row card component mb-4 post">
+<div class=card-header>
+<h1 class="card-title post-title">Podman 시작하기
+</h1>
+</div>
+<div class=card-body><div class=post-meta>
+<span class=post-date title="created on 2022-02-20 08:05:53 +0000 UTC.">
+Feb 20, 2022
+</span><span class=post-reading-time>
+3 min read
+</span><span class=post-taxonomies><a href=https://evir35.github.io/tags/container/ class="badge post-taxonomy">container</a><a href=https://evir35.github.io/tags/docker/ class="badge post-taxonomy">docker</a><a href=https://evir35.github.io/tags/podman/ class="badge post-taxonomy">podman</a></span>
+</div>
+<div class="post-content mb-3"><h2 id=docker-desktop의-유료화>Docker desktop의 유료화<a class="anchor ms-1" href=#docker-desktop의-유료화><i class="fas fa-link"></i></a></h2>
+<p>대부분의 사용자들이 Container를 접하는 것은 Docker를 통해서 접하고 있을 것입니다.
+Linux distribution(e.g. Ubuntu, CentOS, &mldr;)을 사용하는 User는 문제가 없지만 Windows나 MacOS에서는 Docker를 그대로 사용할 수 없고, 가상화를 통해서만 사용이 가능합니다.
+이러한 사용자들의 불편함을 줄여주기 위해 등장한 것이 바로 Docker desktop입니다.
+Docker desktop은 <a href=https://github.com/linuxkit/linuxkit target=_blank rel="noopener noreferrer">LinuxKit</a>을 이용하여 Docker를 사용할 수 있는 Virtual Machine을 Windows나 MacOS에서 자동으로 구축하여 Docker를 사용할 수 있는 환경을 만들어 줍니다.
+이러한 Docker desktop이 Business 목적으로 사용될 경우 유료로 전환되었습니다.
+2022.01.31이 지난 이후로는 Business 목적으로 사용할 경우 Docker에 구독 형식으로 사용료를 지불해야 합니다.
+이러한 변화는 기존의 Docker desktop을 무료로 사용하던 유저들에게는 부담될 수 밖에 없습니다.
+Docker desktop의 대체제를 찾던 도중 <a href=https://github.com/containers/podman target=_blank rel="noopener noreferrer">podman</a>을 발견하게 되었습니다.</p>
+<h2 id=podman>Podman?<a class="anchor ms-1" href=#podman><i class="fas fa-link"></i></a></h2>
+<p><a href=https://github.com/containers/podman target=_blank rel="noopener noreferrer">Podman</a>은 Docker CLI에서 사용되는 대부분의 command가 호환되는 conatiner/pod을 관리할 수 있는 tool입니다.
+심지어 <a href=https://docs.podman.io/en/latest/index.html target=_blank rel="noopener noreferrer">Podman 문서</a>에서는 <code>alias docker=podman</code>으로 alias를 걸어서 사용해도 무방하다고 얘기하고 있을 정도로 Docker CLI와 대부분 호환이 가능합니다.
+그럼 실제로 podman을 설치하고 사용해보도록 하겠습니다.</p>
+<h2 id=environment>Environment<a class="anchor ms-1" href=#environment><i class="fas fa-link"></i></a></h2>
+<p>이번 post에서 사용된 local 환경은 아래외 같습니다.</p>
+<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-text data-lang=text>Machine: Macbook Pro (16-inchim, 2021), Apple M1 Pro
+OS: MacOS Monterey 12.1
+</code></pre></div><h2 id=install-podman>Install Podman<a class="anchor ms-1" href=#install-podman><i class="fas fa-link"></i></a></h2>
+<p>Mac에서는 <a href=https://brew.sh/index_ko target=_blank rel="noopener noreferrer">homebrew</a>를 이용해서 간단하게 설치 가능합니다.</p>
+<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-shell data-lang=shell>brew install podman
+</code></pre></div><p>위 명령어로 설치한 뒤에, <code>version</code> command를 이용해서 설치된 Podman의 버전을 확인할 수 있습니다.</p>
+<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-shell data-lang=shell>$ podman version
+Client:
+Version:      3.4.4
+API Version:  3.4.4
+Go Version:   go1.17.6
+Built:        Thu Dec  <span style=color:#ae81ff>9</span> 03:41:11 <span style=color:#ae81ff>2021</span>
+OS/Arch:      darwin/arm64
+
+Server:
+Version:      3.4.4
+API Version:  3.4.4
+Go Version:   go1.16.8
+Built:        Thu Dec  <span style=color:#ae81ff>9</span> 06:48:10 <span style=color:#ae81ff>2021</span>
+OS/Arch:      linux/arm64
+</code></pre></div><p>제가 설치할 때는 <code>3.4.4</code>가 최신버전이라 <code>3.4.4</code>로 설치되었습니다.</p>
+<h2 id=podman-machine>Podman machine<a class="anchor ms-1" href=#podman-machine><i class="fas fa-link"></i></a></h2>
+<p>Windows나 MacOS에서는 container를 바로 구동시킬 수 없어서 container를 구동시킬 수 있는 Virtaul Machine을 만들어서 해당 Virtual Machine을 만들어서 이 위에 container를 올리는 방식을 주로 사용합니다.
+Podman에서는 Windows나 MacOS에서도 쉽게 container를 사용할 수 있도록 <a href=https://docs.podman.io/en/latest/markdown/podman-machine.1.html target=_blank rel="noopener noreferrer">machine</a>아리는 command를 사용해서 Virtual Machine을 쉽게 만들고, 관리할 수 있도록 제공하고 있습니다.</p>
+<h3 id=virtual-machine-생성하기>Virtual Machine 생성하기<a class="anchor ms-1" href=#virtual-machine-생성하기><i class="fas fa-link"></i></a></h3>
+<p><a href=https://docs.podman.io/en/latest/markdown/podman-machine-init.1.html target=_blank rel="noopener noreferrer">machine init</a>을 통해서 Virtual Machine의 생성이 가능합니다.</p>
+<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-shell data-lang=shell>podman machine init <span style=color:#ae81ff>\
+</span><span style=color:#ae81ff></span>  --cpus <span style=color:#ae81ff>2</span> <span style=color:#ae81ff>\
+</span><span style=color:#ae81ff></span>  --memory <span style=color:#ae81ff>4096</span> <span style=color:#ae81ff>\
+</span><span style=color:#ae81ff></span>  --disk-size <span style=color:#ae81ff>32</span> <span style=color:#ae81ff>\
+</span><span style=color:#ae81ff></span>  --image-path stable <span style=color:#ae81ff>\
+</span><span style=color:#ae81ff></span>  default-vm
+</code></pre></div><p>위 처럼 cpu 2core, memory 4GB, disk 32GB의 <code>default-vm</code>이란 이름의 Podman machine을 생성했습니다.</p>
+<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-shell data-lang=shell>$ podman machine list
+NAME         VM TYPE     CREATED         LAST UP         CPUS        MEMORY      DISK SIZE
+default-vm*  qemu        <span style=color:#ae81ff>12</span> seconds ago  <span style=color:#ae81ff>12</span> seconds ago  <span style=color:#ae81ff>2</span>           4.295GB     34.36GB
+</code></pre></div><p><a href=https://docs.podman.io/en/latest/markdown/podman-machine-list.1.html target=_blank rel="noopener noreferrer">machine list</a> 명령어를 통해서 생성된 machine을 확인 가능합니다.</p>
+<h3 id=virtual-machine-구동시키기>Virtual Machine 구동시키기<a class="anchor ms-1" href=#virtual-machine-구동시키기><i class="fas fa-link"></i></a></h3>
+<p><a href=https://docs.podman.io/en/latest/markdown/podman-machine-start.1.html target=_blank rel="noopener noreferrer">machine start</a> 명령어를 통해서 생성된 machine의 구동이 가능합니다.</p>
+<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-shell data-lang=shell>$ podman machine start default-vm
+INFO<span style=color:#f92672>[</span>0000<span style=color:#f92672>]</span> waiting <span style=color:#66d9ef>for</span> clients...
+INFO<span style=color:#f92672>[</span>0000<span style=color:#f92672>]</span> listening tcp://127.0.0.1:7777
+INFO<span style=color:#f92672>[</span>0000<span style=color:#f92672>]</span> new connection from  to /var/folders/v5/4w4brkd5593764fjm96sjzpc0000gn/T/podman/qemu_default-vm.sock
+Waiting <span style=color:#66d9ef>for</span> VM ...
+Machine <span style=color:#e6db74>&#34;default-vm&#34;</span> started successfully
+</code></pre></div><p>그리고 구동되어 있는지 <code>machine list</code>로 확인해봅시다.</p>
+<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-shell data-lang=shell>$ podman machine list
+NAME         VM TYPE     CREATED        LAST UP            CPUS        MEMORY      DISK SIZE
+default-vm*  qemu        <span style=color:#ae81ff>6</span> minutes ago  Currently running  <span style=color:#ae81ff>2</span>           4.295GB     34.36GB
+</code></pre></div><p><code>LAST UP</code> 부분을 보시면 <code>Currently running</code>이 뜨는 것을 보실 수 있습니다.</p>
+<h2 id=contianer-생성하기>Contianer 생성하기<a class="anchor ms-1" href=#contianer-생성하기><i class="fas fa-link"></i></a></h2>
+<p>이제, container가 올라갈 Virtual Machine도 생성되었으니, 해당 machine에 container를 생성해보겠습니다.
+docker에서 제공하는 <a href=https://docs.docker.com/get-started/ target=_blank rel="noopener noreferrer">getting started</a>에서 제공하는 container image를 이용해서 생성해 보겠습니다.
+위 자료에서 제공하는 명령어를 docker에서 podman으로만 변경해서 진행하면 됩니다.</p>
+<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-shell data-lang=shell><span style=color:#75715e># Create container using docker/getting-started image</span>
+$ podman run -d -p 8080:80 docker/getting-started
+798b8a5a02819ff3a0c942879ae21348a1343bd14741b27edb6422d5db3216b7
+
+<span style=color:#75715e># Listing containers</span>
+$ podman ps
+CONTAINER ID  IMAGE                                    COMMAND               CREATED        STATUS             PORTS                 NAMES
+798b8a5a0281  docker.io/docker/getting-started:latest  nginx -g daemon o...  <span style=color:#ae81ff>9</span> seconds ago  Up <span style=color:#ae81ff>10</span> seconds ago  0.0.0.0:8080-&gt;80/tcp  beautiful_northcutt
+</code></pre></div><p>local의 8080 port로 접근하면 container의 80 port로 접근할 수 있게 설정해주었습니다.
+그런 뒤, chrome에서 http://localhost:8080로 접속할 경우 아래와 같이 docker의 getting-started page를 확인하실 수 있습니다.</p>
+<p><img class=img-fluid alt="docker getting-started page" src=https://evir35.github.io/posts/docker-alternatives-podman/images/docker-getting-started-page.webp loading=lazy>
+</p>
+<h2 id=결론>결론<a class="anchor ms-1" href=#결론><i class="fas fa-link"></i></a></h2>
+<p>Podman을 통해서 docker desktop을 대체 가능할 수 있었고, machine이라는 command 제공을 통해서 Virtual Machine의 제어가 가능한 점이 좋았습니다.
+Docker desktop이 필요하다면 podman을 대신해서 사용하는 것도 괜찮을 것 같습니다.</p>
+</div></div>
+<div class=card-footer></div>
+</article><div class="card component row post-comments" id=post-comments>
+<div class=card-header>
+<h2 class=card-title>Comments</h2>
+</div>
+<div class=card-body><script src=https://utteranc.es/client.js repo=evir35/evir35.github.io issue-term=pathname label=comment theme=github-light crossorigin=anonymous async></script></div>
+</div></div>
+</div><aside class="col-lg-4 sidebar d-flex">
+<div class="container d-flex flex-column">
+<section class="card row text-center profile component">
+<div class=card-body>
+<div class="col-12 d-flex align-items-center justify-content-center"><img class="profile-avatar rounded-circle" alt=evir35 src=https://evir35.github.io/images/profile.webp loading=lazy width=600 height=600>
+</div>
+<div class="col-12 profile-meta"><div class=profile-name>evir35</div><div class=profile-bio>Cloud Engineer</div><div class=profile-location><i class="fas fa-fw fa-map-marker-alt"></i>Republic of Korea</div></div>
+</div>
+</section>
+<div class="post-toc row mb-4 card component" id=postTOC>
+<div class=card-header>
+<h2 class=card-title>Contents</h2>
+</div>
+<div class=card-body>
+<nav id=TableOfContents>
+<ul>
+<li><a href=#docker-desktop의-유료화>Docker desktop의 유료화</a></li>
+<li><a href=#podman>Podman?</a></li>
+<li><a href=#environment>Environment</a></li>
+<li><a href=#install-podman>Install Podman</a></li>
+<li><a href=#podman-machine>Podman machine</a>
+<ul>
+<li><a href=#virtual-machine-생성하기>Virtual Machine 생성하기</a></li>
+<li><a href=#virtual-machine-구동시키기>Virtual Machine 구동시키기</a></li>
+</ul>
+</li>
+<li><a href=#contianer-생성하기>Contianer 생성하기</a></li>
+<li><a href=#결론>결론</a></li>
+</ul>
+</nav>
+</div>
+</div><section class="recent-posts row card component">
+<div class=card-header>
+<h2 class=card-title>Recent Posts</h2>
+</div>
+<div class=card-body>
+<ul class=post-list><li>
+<a href=https://evir35.github.io/posts/docker-alternatives-podman/>Podman 시작하기
+</a>
+</li></ul>
+</div>
+</section><section class="tags-taxonomies row card component">
+<div class=card-header>
+<h2 class=card-title>
+<a href=https://evir35.github.io/tags>Tags</a>
+</h2>
+</div>
+<div class=card-body>
+<div class=py-2><a href=https://evir35.github.io/tags/container/ class="badge rounded post-taxonomy" title=container>
+container</a><a href=https://evir35.github.io/tags/docker/ class="badge rounded post-taxonomy" title=docker>
+docker</a><a href=https://evir35.github.io/tags/podman/ class="badge rounded post-taxonomy" title=podman>
+podman</a></div>
+</div>
+</section>
+</div>
+</aside>
+</div>
+</main><footer class="footer mt-auto py-3 text-center container"><nav class="social-links nav justify-content-center mb-2"><a class="nav-link social-link" href=mailto:evir35@gmail.com title=Email>
+<i class="fas fa-fw fa-2x fa-envelope"></i>
+</a><a class="nav-link social-link" target=_blank href=https://github.com/evir35 title=GitHub rel="noopener noreferrer">
+<i class="fa-fw fa-2x fab fa-github"></i>
+</a><a class="nav-link social-link" target=_blank href=https://linkedin.com/in/minhyeok-park-23316a1ba title=LinkedIn rel="noopener noreferrer">
+<i class="fa-fw fa-2x fab fa-linkedin-in"></i>
+</a></nav>
+<div class="copyright mb-2">
+Copyright © 2022 - 2022 evir35. All Rights Reserved.
+</div>
+<div class="powered-by mb-2">
+Powered by <a href=https://gohugo.io target=_blank rel="noopener noreferrer">Hugo</a> and the <a href=https://github.com/razonyang/hugo-theme-bootstrap target=_blank rel="noopener noreferrer">Bootstrap</a> theme.
+</div></footer>
+<script src=https://evir35.github.io/js/main.e9c59f86e964245833b4657c9db847e00947850b3482e31244375a4479b54224.js integrity="sha256-6cWfhulkJFgztGV8nbhH4AlHhQs0guMSRDdaRHm1QiQ=" crossorigin=anonymous defer></script><script src=https://evir35.github.io/js/icons.min.8ddcaafc364ff0296c2209c5495287f0de039b852da9b24847f94c198b7639b6.js integrity="sha256-jdyq/DZP8ClsIgnFSVKH8N4Dm4UtqbJIR/lMGYt2ObY=" crossorigin=anonymous defer></script>
+<script src=https://evir35.github.io/js/viewer.min.652118a9fbf3403cdfde4026209f97ace22f9e334f0b45a33431a221b3db46a8.js integrity="sha256-ZSEYqfvzQDzf3kAmIJ+XrOIvnjNPC0WjNDGiIbPbRqg=" crossorigin=anonymous defer></script>
+</body>
+</html>
