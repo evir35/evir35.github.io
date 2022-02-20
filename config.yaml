@@ -1,0 +1,30 @@
+baseURL: https://evir35.github.io
+title: evir35's blog
+theme: bootstrap
+copyright: Copyright © 2022 - {year} evir35. All Rights Reserved.
+social:
+  email: evir35@gmail.com
+  github: evir35
+  linkedin: in/minhyeok-park-23316a1ba
+author:
+  name: evir35
+  location: Republic of Korea
+  bio: Cloud Engineer
+params:
+  mainSections:
+    - posts
+  palettes: []
+  sidebarTaxonomies:
+    - tags
+  post:
+    copyright: false
+  utterances:
+    repo: evir35/evir35.github.io
+defaultLanguage: ko
+languages:
+  en:
+    languageName: English
+    weight: 2
+  ko:
+    languageName: 한국어
+    weight: 1
