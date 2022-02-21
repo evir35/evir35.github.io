@@ -20,6 +20,9 @@ params:
     copyright: false
   utterances:
     repo: evir35/evir35.github.io
+  siteVerification:
+    google: m4Vy0BNQFvSNC_SpODvVwIFy8VCbzFOuWtFDk6NIRxk
+    naver: 889158961b98c4c1e29e519465d105b6c7b3af63
 defaultLanguage: ko
 languages:
   en:
@@ -29,3 +32,4 @@ languages:
     languageName: 한국어
     weight: 1
 googleAnalytics: G-S7LE5396CB
+enableRobotsTXT: true
