@@ -1,157 +1,19 @@
-<!doctype html><html lang=en>
-<head>
-<meta charset=utf-8>
-<meta name=viewport content="width=device-width,initial-scale=1">
-<title>Let's Podman! - evir35's blog</title><link rel=apple-touch-icon href=https://evir35.github.io/images/icons/icon-180x180.png sizes=180x180>
-<link rel=icon href=https://evir35.github.io/images/icons/icon-32x32.png sizes=32x32 type=image/png>
-<link rel=icon href=https://evir35.github.io/images/icons/icon-16x16.png sizes=16x16 type=image/png>
-<link rel=icon href=https://evir35.github.io/images/icons/favicon.ico>
-<link rel=manifest href=https://evir35.github.io/manifest.json>
-<meta name=keywords content>
-<meta name=description content="Docker desktop is paid for commercial use Almost all users would have used Docker to deploy containers. Users who use Linux distributions (such as Ubuntu, CentOS, etc.) for their OS haven&rsquo;t had a problem. But, on Windows or macOS, you can use Docker only over virtualization. You can&rsquo;t use Docker natively on Windows or macOS. To reduce the discomfort of users, the Docker desktop came up. The Docker desktop creates a virtual machine to deploy containers via LinuxKit."><meta itemprop=name content="Let's Podman!">
-<meta itemprop=description content="Docker desktop is paid for commercial use Almost all users would have used Docker to deploy containers. Users who use Linux distributions (such as Ubuntu, CentOS, etc.) for their OS haven&rsquo;t had a problem. But, on Windows or macOS, you can use Docker only over virtualization. You can&rsquo;t use Docker natively on Windows or macOS. To reduce the discomfort of users, the Docker desktop came up. The Docker desktop creates a virtual machine to deploy containers via LinuxKit."><meta itemprop=datePublished content="2022-02-20T17:05:53+09:00">
-<meta itemprop=dateModified content="2022-02-20T17:05:53+09:00">
-<meta itemprop=wordCount content="695">
-<meta itemprop=keywords content="container,docker,podman,"><meta property="og:title" content="Let's Podman!">
-<meta property="og:description" content="Docker desktop is paid for commercial use Almost all users would have used Docker to deploy containers. Users who use Linux distributions (such as Ubuntu, CentOS, etc.) for their OS haven&rsquo;t had a problem. But, on Windows or macOS, you can use Docker only over virtualization. You can&rsquo;t use Docker natively on Windows or macOS. To reduce the discomfort of users, the Docker desktop came up. The Docker desktop creates a virtual machine to deploy containers via LinuxKit.">
-<meta property="og:type" content="article">
-<meta property="og:url" content="https://evir35.github.io/posts/docker-alternatives-podman/"><meta property="article:section" content="posts">
-<meta property="article:published_time" content="2022-02-20T17:05:53+09:00">
-<meta property="article:modified_time" content="2022-02-20T17:05:53+09:00">
-<meta name=twitter:card content="summary">
-<meta name=twitter:title content="Let's Podman!">
-<meta name=twitter:description content="Docker desktop is paid for commercial use Almost all users would have used Docker to deploy containers. Users who use Linux distributions (such as Ubuntu, CentOS, etc.) for their OS haven&rsquo;t had a problem. But, on Windows or macOS, you can use Docker only over virtualization. You can&rsquo;t use Docker natively on Windows or macOS. To reduce the discomfort of users, the Docker desktop came up. The Docker desktop creates a virtual machine to deploy containers via LinuxKit.">
-<meta property="og:image" content="https://evir35.github.io/images/logo.png">
-<meta name=twitter:image content="https://evir35.github.io/images/logo.png"><link rel=stylesheet href=https://evir35.github.io/css/main.min.507afbe6e4670fa3e961a0b35816b5daeb36029866fd6bd7b9d7871fcf88faa5.css integrity="sha256-UHr75uRnD6PpYaCzWBa12us2Aphm/WvXudeHH8+I+qU=" crossorigin=anonymous><link rel=stylesheet href=https://evir35.github.io/css/viewer.min.3d228794bcedbbfa0412beb8fbc1ec6973202945e42af7004f742a4d7bd620ab.css integrity="sha256-PSKHlLztu/oEEr64+8HsaXMgKUXkKvcAT3QqTXvWIKs=" crossorigin=anonymous></head>
-<body><script>const items=['mode','palette'];items.forEach(function(a){const b=localStorage.getItem('hbs-'+a);b&&document.body.parentElement.setAttribute('data-'+a,b)})</script><header><nav class="navbar top-app-bar top-app-bar-expand-lg fixed-top">
-<div class=container>
-<button class=navbar-toggler type=button data-bs-toggle=collapse data-bs-target=#navbarSupportedContent aria-controls=navbarSupportedContent aria-expanded=false aria-label="Toggle navigation">
+<!doctype html><html lang=en><head><meta charset=utf-8><meta name=viewport content="width=device-width,initial-scale=1"><title>Let's Podman! - evir35's blog</title><link rel=apple-touch-icon href=https://evir35.github.io/images/icons/icon-180x180.png sizes=180x180><link rel=icon href=https://evir35.github.io/images/icons/icon-32x32.png sizes=32x32 type=image/png><link rel=icon href=https://evir35.github.io/images/icons/icon-16x16.png sizes=16x16 type=image/png><link rel=icon href=https://evir35.github.io/images/icons/favicon.ico><link rel=manifest href=https://evir35.github.io/manifest.json><meta name=keywords content><meta name=description content="Docker desktop is paid for commercial use Almost all users would have used Docker to deploy containers. Users who use Linux distributions (such as Ubuntu, CentOS, etc.) for their OS haven&rsquo;t had a problem. But, on Windows or macOS, you can use Docker only over virtualization. You can&rsquo;t use Docker natively on Windows or macOS. To reduce the discomfort of users, the Docker desktop came up. The Docker desktop creates a virtual machine to deploy containers via LinuxKit."><meta itemprop=name content="Let's Podman!"><meta itemprop=description content="Docker desktop is paid for commercial use Almost all users would have used Docker to deploy containers. Users who use Linux distributions (such as Ubuntu, CentOS, etc.) for their OS haven&rsquo;t had a problem. But, on Windows or macOS, you can use Docker only over virtualization. You can&rsquo;t use Docker natively on Windows or macOS. To reduce the discomfort of users, the Docker desktop came up. The Docker desktop creates a virtual machine to deploy containers via LinuxKit."><meta itemprop=datePublished content="2022-02-20T17:05:53+09:00"><meta itemprop=dateModified content="2022-02-20T17:05:53+09:00"><meta itemprop=wordCount content="695"><meta itemprop=keywords content="container,docker,podman,"><meta property="og:title" content="Let's Podman!"><meta property="og:description" content="Docker desktop is paid for commercial use Almost all users would have used Docker to deploy containers. Users who use Linux distributions (such as Ubuntu, CentOS, etc.) for their OS haven&rsquo;t had a problem. But, on Windows or macOS, you can use Docker only over virtualization. You can&rsquo;t use Docker natively on Windows or macOS. To reduce the discomfort of users, the Docker desktop came up. The Docker desktop creates a virtual machine to deploy containers via LinuxKit."><meta property="og:type" content="article"><meta property="og:url" content="https://evir35.github.io/posts/docker-alternatives-podman/"><meta property="article:section" content="posts"><meta property="article:published_time" content="2022-02-20T17:05:53+09:00"><meta property="article:modified_time" content="2022-02-20T17:05:53+09:00"><meta name=twitter:card content="summary"><meta name=twitter:title content="Let's Podman!"><meta name=twitter:description content="Docker desktop is paid for commercial use Almost all users would have used Docker to deploy containers. Users who use Linux distributions (such as Ubuntu, CentOS, etc.) for their OS haven&rsquo;t had a problem. But, on Windows or macOS, you can use Docker only over virtualization. You can&rsquo;t use Docker natively on Windows or macOS. To reduce the discomfort of users, the Docker desktop came up. The Docker desktop creates a virtual machine to deploy containers via LinuxKit."><meta property="og:image" content="https://evir35.github.io/images/logo.png"><meta name=twitter:image content="https://evir35.github.io/images/logo.png"><link rel=stylesheet href=https://evir35.github.io/css/main.min.24196952817c68c8b90d8fa573d560fa62766baa0622bdc0e862255f4a4d1307.css integrity="sha256-JBlpUoF8aMi5DY+lc9Vg+mJ2a6oGIr3A6GIlX0pNEwc=" crossorigin=anonymous><link rel=stylesheet href=https://evir35.github.io/css/viewer.min.3d228794bcedbbfa0412beb8fbc1ec6973202945e42af7004f742a4d7bd620ab.css integrity="sha256-PSKHlLztu/oEEr64+8HsaXMgKUXkKvcAT3QqTXvWIKs=" crossorigin=anonymous></head><body><script>const items=["mode","palette"];items.forEach(function(e){const t=localStorage.getItem("hbs-"+e);t&&document.body.parentElement.setAttribute("data-"+e,t)})</script><header><nav class="navbar top-app-bar top-app-bar-expand-lg fixed-top"><div class=container><button class=navbar-toggler type=button data-bs-toggle=collapse data-bs-target=#navbarSupportedContent aria-controls=navbarSupportedContent aria-expanded=false aria-label="Toggle navigation">
 <i class="fas fa-bars"></i>
 </button><a class="navbar-brand flex-grow-1 flex-lg-grow-0 text-center text-lg-start mx-auto me-lg-3" href=https://evir35.github.io><img class=logo alt=Logo src=https://evir35.github.io/images/logo.webp loading=lazy width=600 height=600>
-evir35's blog
-</a>
-<div class="offcanvas offcanvas-bottom surface" tabindex=-1 id=offcanvasSocialShare aria-labelledby=offcanvasSocialShare>
-<div class=offcanvas-header>
-<h3 class=offcanvas-title>Share</h3>
-<button type=button class="btn btn-sm btn-outline-primary" data-bs-dismiss=offcanvas aria-label=Close>
-<i class="fas fa-times"></i>
-</button>
-</div>
-<div class=offcanvas-body>
-<a class="btn btn-sm btn-outline-primary social-share-button" rel="noopener noreferrer" aria-label="Twitter Share Button" target=_blank href="https://twitter.com/intent/tweet?title=Let%27s%20Podman%21&url=https%3a%2f%2fevir35.github.io%2fposts%2fdocker-alternatives-podman%2f">
-<i class="fab fa-fw fa-twitter"></i> Twitter
-</a>
-<a class="btn btn-sm btn-outline-primary social-share-button" rel="noopener noreferrer" aria-label="Facebook Share Button" target=_blank href="https://www.facebook.com/sharer/sharer.php?u=https%3a%2f%2fevir35.github.io%2fposts%2fdocker-alternatives-podman%2f">
-<i class="fab fa-fw fa-facebook-f"></i> Facebook
-</a>
-</div>
-</div>
-<button class=navbar-settings type=button data-bs-toggle=offcanvas data-bs-target=#offcanvasSettings aria-controls=offcanvasSettings aria-label="Toggle settings">
-<i class="fas fa-ellipsis-v"></i>
-</button>
-<div class="offcanvas offcanvas-end surface h-100" tabindex=-1 id=offcanvasSettings aria-labelledby=offcanvasSettings>
-<div class=offcanvas-header>
-<h3 class=offcanvas-title>Settings</h3>
-<button type=button class="btn btn-sm btn-outline-primary" data-bs-dismiss=offcanvas aria-label=Close>
-<i class="fas fa-times"></i>
-</button>
-</div>
-<div class="offcanvas-body d-flex flex-column"><section class=setting>
-<form class=row>
-<div class=col-auto>
-<label for=fontSize class=form-label><i class="fas fa-fw fa-language"></i> Language</label>
-</div>
-<div class="col-auto ms-auto">
-<div class=dropdown>
-<a class="btn btn-sm btn-outline-primary dropdown-toggle" href=# id=languageDropdown role=button data-bs-toggle=dropdown aria-expanded=false>
-English
-</a>
-<ul class="dropdown-menu dropdown-menu-end" aria-labelledby=languageDropdown><li><a class=dropdown-item href=https://evir35.github.io/ko/>한국어</a></li></ul>
-</div>
-</div>
-</form>
-</section>
-<section class=setting>
-<form class=row>
-<div class=col-auto>
-<label><i class="fas fa-fw fa-adjust"></i> Mode</label>
-</div>
-<div class="col-auto ms-auto">
-<div class="form-check form-switch">
-<input class=form-check-input type=checkbox id=modeSwitcher>
-</div>
-</div>
-</form>
-</section>
-<section class="setting actions d-flex justify-content-around mt-auto overflow-auto">
-<a role=button class="action action-go-back" href="javascript: window.history.back();">
-<span class=action-icon><i class="fas fa-2x fa-arrow-left"></i></span> Go back
-</a>
-<a role=button class="action action-reload-page">
-<span class=action-icon><i class="fas fa-2x fa-redo-alt"></i></span> Reload
-</a>
-<a role=button class="action action-copy-url">
-<span class=action-icon><i class="fas fa-2x fa-link"></i></span> Copy URL
-</a><a class="action action-social-share" type=button data-bs-toggle=offcanvas data-bs-target=#offcanvasSocialShare aria-controls=offcanvasSocialShare aria-label="Toggle social share">
-<span class=action-icon><i class="fas fa-2x fa-share-alt"></i></span> Share
-</a></section>
-</div>
-</div>
-<div class="collapse navbar-collapse" tabindex=-1 id=navbarSupportedContent aria-labelledby=navbarSupportedContent>
-<form class="search-bar my-1" action=https://evir35.github.io/search>
-<div class="input-group input-group-sm">
-<span class="btn btn-search disabled position-absolute left-0"><i class="fas fa-fw fa-search"></i></span>
-<input class="form-control rounded-pill" name=q type=search aria-label=Search>
-</div>
-</form>
-<ul class="navbar-nav ms-auto"></ul>
-</div>
-</div>
-</nav>
-</header>
-<main role=main class=container>
-<div class="row content">
-<div class=col-lg-8>
-<div class=container><nav class="row card component" aria-label=breadcrumb>
-<div class=card-body>
-<ol class=breadcrumb><li class=breadcrumb-item><a href=https://evir35.github.io/>Home</a></li><li class=breadcrumb-item><a href=https://evir35.github.io/posts/>Posts</a></li><li class="breadcrumb-item active">Let's Podman!</li></ol>
-</div>
-</nav><div class=post-panel-wrapper>
-<div class="d-flex flex-column component rounded post-panel">
-<a class="action action-panel-toggler" role=button title="Panel toggler">
-<i class="fas fa-fw fa-chevron-circle-down"></i>
-</a>
-<a id=sidebarToggler class="action d-none d-lg-block" role=button title="Sidebar toggler">
-<i class="fas fa-fw fa-expand-alt" data-fa-transform=rotate-45></i>
-</a>
-<div class="post-translations nav-item dropdown dropstart action">
-<a class="nav-link p-0" data-bs-toggle=dropdown href=# role=button aria-haspopup=true aria-expanded=false aria-label="Translations dropdown menu" title=Translations>
-<i class="fas fa-fw fa-language"></i>
-</a>
-<div class=dropdown-menu><a class="dropdown-item post-translation" href=https://evir35.github.io/ko/posts/docker-alternatives-podman/>한국어</a></div>
-</div>
-<a class=action href=#post-comments role=button aria-label=Comments title=Comments>
-<i class="fas fa-fw fa-comments"></i>
-</a>
-<a class=action href=#postTOC aria-controls="Table of contents" role=button title="Table of contents">
-<i class="fas fa-fw fa-list-alt"></i>
-</a>
-</div>
-</div>
-<article class="row card component mb-4 post">
-<div class=card-header>
-<h1 class="card-title post-title">Let's Podman!
-</h1>
-</div>
-<div class=card-body><div class=post-meta>
-<span class=post-date title="created on 2022-02-20 08:05:53 +0000 UTC.">
-Feb 20, 2022
-</span><span class=post-reading-time>
-4 min read
-</span><span class=post-taxonomies><a href=https://evir35.github.io/tags/container/ class="badge post-taxonomy">container</a><a href=https://evir35.github.io/tags/docker/ class="badge post-taxonomy">docker</a><a href=https://evir35.github.io/tags/podman/ class="badge post-taxonomy">podman</a></span>
-</div>
-<div class="post-content mb-3"><h2 id=docker-desktop-is-paid-for-commercial-use>Docker desktop is paid for commercial use<a class="anchor ms-1" href=#docker-desktop-is-paid-for-commercial-use><i class="fas fa-link"></i></a></h2>
-<p>Almost all users would have used Docker to deploy containers.
+evir35's blog</a><div class="offcanvas offcanvas-bottom surface" tabindex=-1 id=offcanvasSocialShare aria-labelledby=offcanvasSocialShare><div class=offcanvas-header><h3 class=offcanvas-title>Share</h3><button type=button class="btn btn-sm btn-outline-primary" data-bs-dismiss=offcanvas aria-label=Close>
+<i class="fas fa-times"></i></button></div><div class=offcanvas-body><a class="btn btn-sm btn-outline-primary social-share-button" rel="noopener noreferrer" aria-label="Twitter Share Button" target=_blank href="https://twitter.com/intent/tweet?title=Let%27s%20Podman%21&url=https%3a%2f%2fevir35.github.io%2fposts%2fdocker-alternatives-podman%2f"><i class="fab fa-fw fa-twitter"></i> Twitter</a>
+<a class="btn btn-sm btn-outline-primary social-share-button" rel="noopener noreferrer" aria-label="Facebook Share Button" target=_blank href="https://www.facebook.com/sharer/sharer.php?u=https%3a%2f%2fevir35.github.io%2fposts%2fdocker-alternatives-podman%2f"><i class="fab fa-fw fa-facebook-f"></i> Facebook</a></div></div><button class=navbar-settings type=button data-bs-toggle=offcanvas data-bs-target=#offcanvasSettings aria-controls=offcanvasSettings aria-label="Toggle settings">
+<i class="fas fa-ellipsis-v"></i></button><div class="offcanvas offcanvas-end surface h-100" tabindex=-1 id=offcanvasSettings aria-labelledby=offcanvasSettings><div class=offcanvas-header><h3 class=offcanvas-title>Settings</h3><button type=button class="btn btn-sm btn-outline-primary" data-bs-dismiss=offcanvas aria-label=Close>
+<i class="fas fa-times"></i></button></div><div class="offcanvas-body d-flex flex-column"><section class=setting><form class=row><div class=col-auto><label for=fontSize class=form-label><i class="fas fa-fw fa-language"></i> Language</label></div><div class="col-auto ms-auto"><div class=dropdown><a class="btn btn-sm btn-outline-primary dropdown-toggle" href=# id=languageDropdown role=button data-bs-toggle=dropdown aria-expanded=false>English</a><ul class="dropdown-menu dropdown-menu-end" aria-labelledby=languageDropdown><li><a class=dropdown-item href=https://evir35.github.io/ko/>한국어</a></li></ul></div></div></form></section><section class=setting><form class=row><div class=col-auto><label><i class="fas fa-fw fa-adjust"></i> Mode</label></div><div class="col-auto ms-auto"><div class="form-check form-switch"><input class=form-check-input type=checkbox id=modeSwitcher></div></div></form></section><section class="setting actions d-flex justify-content-around mt-auto overflow-auto"><a role=button class="action action-go-back" href="javascript: window.history.back();"><span class=action-icon><i class="fas fa-2x fa-arrow-left"></i></span> Go back</a>
+<a role=button class="action action-reload-page"><span class=action-icon><i class="fas fa-2x fa-redo-alt"></i></span> Reload</a>
+<a role=button class="action action-copy-url"><span class=action-icon><i class="fas fa-2x fa-link"></i></span> Copy URL
+</a><a class="action action-social-share" type=button data-bs-toggle=offcanvas data-bs-target=#offcanvasSocialShare aria-controls=offcanvasSocialShare aria-label="Toggle social share"><span class=action-icon><i class="fas fa-2x fa-share-alt"></i></span> Share</a></section></div></div><div class="collapse navbar-collapse" tabindex=-1 id=navbarSupportedContent aria-labelledby=navbarSupportedContent><form class="search-bar my-1" action=https://evir35.github.io/search><div class="input-group input-group-sm"><span class="btn btn-search disabled position-absolute left-0"><i class="fas fa-fw fa-search"></i></span>
+<input class="form-control rounded-pill" name=q type=search aria-label=Search></div></form><ul class="navbar-nav ms-auto"></ul></div></div></nav></header><main role=main class=container><div class="row content"><div class=col-lg-8><div class=container><nav class="row card component" aria-label=breadcrumb><div class=card-body><ol class=breadcrumb><li class=breadcrumb-item><a href=https://evir35.github.io/>Home</a></li><li class=breadcrumb-item><a href=https://evir35.github.io/posts/>Posts</a></li><li class="breadcrumb-item active">Let's Podman!</li></ol></div></nav><div class=post-panel-wrapper><div class="d-flex flex-column component rounded post-panel"><a class="action action-panel-toggler" role=button title="Panel toggler"><i class="fas fa-fw fa-chevron-circle-down"></i></a>
+<a id=sidebarToggler class="action d-none d-lg-block" role=button title="Sidebar toggler"><i class="fas fa-fw fa-expand-alt" data-fa-transform=rotate-45></i></a><div class="post-translations nav-item dropdown dropstart action"><a class="nav-link p-0" data-bs-toggle=dropdown href=# role=button aria-haspopup=true aria-expanded=false aria-label="Translations dropdown menu" title=Translations><i class="fas fa-fw fa-language"></i></a><div class=dropdown-menu><a class="dropdown-item post-translation" href=https://evir35.github.io/ko/posts/docker-alternatives-podman/>한국어</a></div></div><a class=action href=#post-comments role=button aria-label=Comments title=Comments><i class="fas fa-fw fa-comments"></i></a>
+<a class=action href=#postTOC aria-controls="Table of contents" role=button title="Table of contents"><i class="fas fa-fw fa-list-alt"></i></a></div></div><article class="row card component mb-4 post"><div class=card-header><h1 class="card-title post-title">Let's Podman!</h1></div><div class=card-body><div class=post-meta><span class=post-date title="created on 2022-02-20 08:05:53 +0000 UTC.">Feb 20, 2022
+</span><span class=post-reading-time>4 min read
+</span><span class=post-taxonomies><a href=https://evir35.github.io/tags/container/ class="badge post-taxonomy">container</a><a href=https://evir35.github.io/tags/docker/ class="badge post-taxonomy">docker</a><a href=https://evir35.github.io/tags/podman/ class="badge post-taxonomy">podman</a></span></div><div class="post-content mb-3"><h2 id=docker-desktop-is-paid-for-commercial-use>Docker desktop is paid for commercial use<a class="anchor ms-1" href=#docker-desktop-is-paid-for-commercial-use><i class="fas fa-link"></i></a></h2><p>Almost all users would have used Docker to deploy containers.
 Users who use Linux distributions (such as Ubuntu, CentOS, etc.) for their OS haven&rsquo;t had a problem.
 But, on Windows or macOS, you can use Docker only over virtualization.
 You can&rsquo;t use Docker natively on Windows or macOS.
@@ -161,164 +23,62 @@ However, the Docker desktop was converted to be paid for commercial use.
 From 2022/01/31, Docker desktop users have to pay for commercial purposes. 
 The changes are a burden for users who previously got the Docker desktop for free.
 To feel free about this issue, I could find an alternative to the Docker desktop.
-It&rsquo;s <a href=https://github.com/containers/podman target=_blank rel="noopener noreferrer">Podman</a>!</p>
-<h2 id=whats-a-podman>What&rsquo;s a Podman?<a class="anchor ms-1" href=#whats-a-podman><i class="fas fa-link"></i></a></h2>
-<p><a href=https://github.com/containers/podman target=_blank rel="noopener noreferrer">Podman</a> is a tool to manage containers and pods and is compatible with Docker CLI.
+It&rsquo;s <a href=https://github.com/containers/podman target=_blank rel="noopener noreferrer">Podman</a>!</p><h2 id=whats-a-podman>What&rsquo;s a Podman?<a class="anchor ms-1" href=#whats-a-podman><i class="fas fa-link"></i></a></h2><p><a href=https://github.com/containers/podman target=_blank rel="noopener noreferrer">Podman</a> is a tool to manage containers and pods and is compatible with Docker CLI.
 Furthermore, as written in <a href=https://docs.podman.io/en/latest/index.html target=_blank rel="noopener noreferrer">the Podman documentation</a>, we can use almost all the example commands of docker without any more settings by using the <code>alias docker=podman</code> command.
-Then let&rsquo;s install the Podman and try it out!</p>
-<h2 id=environment>Environment<a class="anchor ms-1" href=#environment><i class="fas fa-link"></i></a></h2>
-<p>My local environment is like below:</p>
-<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-text data-lang=text>Machine: Macbook Pro (16-inchim, 2021), Apple M1 Pro
-OS: MacOS Monterey 12.1
-</code></pre></div><h2 id=install-podman>Install Podman<a class="anchor ms-1" href=#install-podman><i class="fas fa-link"></i></a></h2>
-<p>Podman can be easily installed on macOS by using <a href=https://brew.sh/index_ko target=_blank rel="noopener noreferrer">homebrew</a>.</p>
-<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-shell data-lang=shell>brew install podman
-</code></pre></div><p>By using the upper command, we can check the version of the installed Podman.</p>
-<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-shell data-lang=shell>$ podman version
-Client:
-Version:      3.4.4
-API Version:  3.4.4
-Go Version:   go1.17.6
-Built:        Thu Dec  <span style=color:#ae81ff>9</span> 03:41:11 <span style=color:#ae81ff>2021</span>
-OS/Arch:      darwin/arm64
-
-Server:
-Version:      3.4.4
-API Version:  3.4.4
-Go Version:   go1.16.8
-Built:        Thu Dec  <span style=color:#ae81ff>9</span> 06:48:10 <span style=color:#ae81ff>2021</span>
-OS/Arch:      linux/arm64
-</code></pre></div><p>Because it was the most recent version when I installed it, it was installed at 3.4.4.</p>
-<h2 id=a-machine-command-of-the-podman>A machine command of the Podman<a class="anchor ms-1" href=#a-machine-command-of-the-podman><i class="fas fa-link"></i></a></h2>
-<p>On Windows and macOS, we usually create a virtual machine to deploy containers because we can&rsquo;t deploy containers natively.
-The Podman provides <a href=https://docs.podman.io/en/latest/markdown/podman-machine.1.html target=_blank rel="noopener noreferrer">a machine command</a> to easily create and manage virtual machines.</p>
-<h3 id=create-a-virtual-machine>Create a virtual machine<a class="anchor ms-1" href=#create-a-virtual-machine><i class="fas fa-link"></i></a></h3>
-<p>To create a virtual machine, we can use <a href=https://docs.podman.io/en/latest/markdown/podman-machine-init.1.html target=_blank rel="noopener noreferrer">the machine init command</a>.</p>
-<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-shell data-lang=shell>podman machine init <span style=color:#ae81ff>\
-</span><span style=color:#ae81ff></span>  --cpus <span style=color:#ae81ff>2</span> <span style=color:#ae81ff>\
-</span><span style=color:#ae81ff></span>  --memory <span style=color:#ae81ff>4096</span> <span style=color:#ae81ff>\
-</span><span style=color:#ae81ff></span>  --disk-size <span style=color:#ae81ff>32</span> <span style=color:#ae81ff>\
-</span><span style=color:#ae81ff></span>  --image-path stable <span style=color:#ae81ff>\
-</span><span style=color:#ae81ff></span>  default-vm
-</code></pre></div><p>I created a virtual machine named <code>default-vm</code> with a CPU of 2 cores, 4GB of memory, and a disk of 32GB.</p>
-<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-shell data-lang=shell>$ podman machine list
-NAME         VM TYPE     CREATED         LAST UP         CPUS        MEMORY      DISK SIZE
-default-vm*  qemu        <span style=color:#ae81ff>12</span> seconds ago  <span style=color:#ae81ff>12</span> seconds ago  <span style=color:#ae81ff>2</span>           4.295GB     34.36GB
-</code></pre></div><p>We can find a newly created virtual machine using <a href=https://docs.podman.io/en/latest/markdown/podman-machine-list.1.html target=_blank rel="noopener noreferrer">the machine list command</a>.</p>
-<h3 id=boot-a-virtual-machine>Boot a virtual machine<a class="anchor ms-1" href=#boot-a-virtual-machine><i class="fas fa-link"></i></a></h3>
-<p>Using <a href=https://docs.podman.io/en/latest/markdown/podman-machine-start.1.html target=_blank rel="noopener noreferrer">the machine start command</a>, we can start a virtual machine.</p>
-<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-shell data-lang=shell>$ podman machine start default-vm
-INFO<span style=color:#f92672>[</span>0000<span style=color:#f92672>]</span> waiting <span style=color:#66d9ef>for</span> clients...
-INFO<span style=color:#f92672>[</span>0000<span style=color:#f92672>]</span> listening tcp://127.0.0.1:7777
-INFO<span style=color:#f92672>[</span>0000<span style=color:#f92672>]</span> new connection from  to /var/folders/v5/4w4brkd5593764fjm96sjzpc0000gn/T/podman/qemu_default-vm.sock
-Waiting <span style=color:#66d9ef>for</span> VM ...
-Machine <span style=color:#e6db74>&#34;default-vm&#34;</span> started successfully
-</code></pre></div><p>With the machine list command, verify whether the virtual machine has been booted or not.</p>
-<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-shell data-lang=shell>$ podman machine list
-NAME         VM TYPE     CREATED        LAST UP            CPUS        MEMORY      DISK SIZE
-default-vm*  qemu        <span style=color:#ae81ff>6</span> minutes ago  Currently running  <span style=color:#ae81ff>2</span>           4.295GB     34.36GB
-</code></pre></div><p>You can check the <code>Currently running</code> status in the <code>LAST UP</code> column.</p>
-<h2 id=deploy-contianer-to-virtual-machine>Deploy contianer to virtual machine<a class="anchor ms-1" href=#deploy-contianer-to-virtual-machine><i class="fas fa-link"></i></a></h2>
-<p>Once the virtual machine is ready to host the container, we can deploy it there.
+Then let&rsquo;s install the Podman and try it out!</p><h2 id=environment>Environment<a class="anchor ms-1" href=#environment><i class="fas fa-link"></i></a></h2><p>My local environment is like below:</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-text data-lang=text><span style=display:flex><span>Machine: Macbook Pro (16-inchim, 2021), Apple M1 Pro
+</span></span><span style=display:flex><span>OS: MacOS Monterey 12.1
+</span></span></code></pre></div><h2 id=install-podman>Install Podman<a class="anchor ms-1" href=#install-podman><i class="fas fa-link"></i></a></h2><p>Podman can be easily installed on macOS by using <a href=https://brew.sh/index_ko target=_blank rel="noopener noreferrer">homebrew</a>.</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-shell data-lang=shell><span style=display:flex><span>brew install podman
+</span></span></code></pre></div><p>By using the upper command, we can check the version of the installed Podman.</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-shell data-lang=shell><span style=display:flex><span>$ podman version
+</span></span><span style=display:flex><span>Client:
+</span></span><span style=display:flex><span>Version:      3.4.4
+</span></span><span style=display:flex><span>API Version:  3.4.4
+</span></span><span style=display:flex><span>Go Version:   go1.17.6
+</span></span><span style=display:flex><span>Built:        Thu Dec  <span style=color:#ae81ff>9</span> 03:41:11 <span style=color:#ae81ff>2021</span>
+</span></span><span style=display:flex><span>OS/Arch:      darwin/arm64
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>Server:
+</span></span><span style=display:flex><span>Version:      3.4.4
+</span></span><span style=display:flex><span>API Version:  3.4.4
+</span></span><span style=display:flex><span>Go Version:   go1.16.8
+</span></span><span style=display:flex><span>Built:        Thu Dec  <span style=color:#ae81ff>9</span> 06:48:10 <span style=color:#ae81ff>2021</span>
+</span></span><span style=display:flex><span>OS/Arch:      linux/arm64
+</span></span></code></pre></div><p>Because it was the most recent version when I installed it, it was installed at 3.4.4.</p><h2 id=a-machine-command-of-the-podman>A machine command of the Podman<a class="anchor ms-1" href=#a-machine-command-of-the-podman><i class="fas fa-link"></i></a></h2><p>On Windows and macOS, we usually create a virtual machine to deploy containers because we can&rsquo;t deploy containers natively.
+The Podman provides <a href=https://docs.podman.io/en/latest/markdown/podman-machine.1.html target=_blank rel="noopener noreferrer">a machine command</a> to easily create and manage virtual machines.</p><h3 id=create-a-virtual-machine>Create a virtual machine<a class="anchor ms-1" href=#create-a-virtual-machine><i class="fas fa-link"></i></a></h3><p>To create a virtual machine, we can use <a href=https://docs.podman.io/en/latest/markdown/podman-machine-init.1.html target=_blank rel="noopener noreferrer">the machine init command</a>.</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-shell data-lang=shell><span style=display:flex><span>podman machine init <span style=color:#ae81ff>\
+</span></span></span><span style=display:flex><span><span style=color:#ae81ff></span>  --cpus <span style=color:#ae81ff>2</span> <span style=color:#ae81ff>\
+</span></span></span><span style=display:flex><span><span style=color:#ae81ff></span>  --memory <span style=color:#ae81ff>4096</span> <span style=color:#ae81ff>\
+</span></span></span><span style=display:flex><span><span style=color:#ae81ff></span>  --disk-size <span style=color:#ae81ff>32</span> <span style=color:#ae81ff>\
+</span></span></span><span style=display:flex><span><span style=color:#ae81ff></span>  --image-path stable <span style=color:#ae81ff>\
+</span></span></span><span style=display:flex><span><span style=color:#ae81ff></span>  default-vm
+</span></span></code></pre></div><p>I created a virtual machine named <code>default-vm</code> with a CPU of 2 cores, 4GB of memory, and a disk of 32GB.</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-shell data-lang=shell><span style=display:flex><span>$ podman machine list
+</span></span><span style=display:flex><span>NAME         VM TYPE     CREATED         LAST UP         CPUS        MEMORY      DISK SIZE
+</span></span><span style=display:flex><span>default-vm*  qemu        <span style=color:#ae81ff>12</span> seconds ago  <span style=color:#ae81ff>12</span> seconds ago  <span style=color:#ae81ff>2</span>           4.295GB     34.36GB
+</span></span></code></pre></div><p>We can find a newly created virtual machine using <a href=https://docs.podman.io/en/latest/markdown/podman-machine-list.1.html target=_blank rel="noopener noreferrer">the machine list command</a>.</p><h3 id=boot-a-virtual-machine>Boot a virtual machine<a class="anchor ms-1" href=#boot-a-virtual-machine><i class="fas fa-link"></i></a></h3><p>Using <a href=https://docs.podman.io/en/latest/markdown/podman-machine-start.1.html target=_blank rel="noopener noreferrer">the machine start command</a>, we can start a virtual machine.</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-shell data-lang=shell><span style=display:flex><span>$ podman machine start default-vm
+</span></span><span style=display:flex><span>INFO<span style=color:#f92672>[</span>0000<span style=color:#f92672>]</span> waiting <span style=color:#66d9ef>for</span> clients...
+</span></span><span style=display:flex><span>INFO<span style=color:#f92672>[</span>0000<span style=color:#f92672>]</span> listening tcp://127.0.0.1:7777
+</span></span><span style=display:flex><span>INFO<span style=color:#f92672>[</span>0000<span style=color:#f92672>]</span> new connection from  to /var/folders/v5/4w4brkd5593764fjm96sjzpc0000gn/T/podman/qemu_default-vm.sock
+</span></span><span style=display:flex><span>Waiting <span style=color:#66d9ef>for</span> VM ...
+</span></span><span style=display:flex><span>Machine <span style=color:#e6db74>&#34;default-vm&#34;</span> started successfully
+</span></span></code></pre></div><p>With the machine list command, verify whether the virtual machine has been booted or not.</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-shell data-lang=shell><span style=display:flex><span>$ podman machine list
+</span></span><span style=display:flex><span>NAME         VM TYPE     CREATED        LAST UP            CPUS        MEMORY      DISK SIZE
+</span></span><span style=display:flex><span>default-vm*  qemu        <span style=color:#ae81ff>6</span> minutes ago  Currently running  <span style=color:#ae81ff>2</span>           4.295GB     34.36GB
+</span></span></code></pre></div><p>You can check the <code>Currently running</code> status in the <code>LAST UP</code> column.</p><h2 id=deploy-contianer-to-virtual-machine>Deploy contianer to virtual machine<a class="anchor ms-1" href=#deploy-contianer-to-virtual-machine><i class="fas fa-link"></i></a></h2><p>Once the virtual machine is ready to host the container, we can deploy it there.
 I will create a container using an image provided in Docker&rsquo;s [getting started(https://docs.docker.com/get-started/) document.
-It&rsquo;s enough to just convert the command from <code>docker</code> to <code>podman</code> in the Docker <code>getting started</code> document.</p>
-<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-shell data-lang=shell><span style=color:#75715e># Create container using docker/getting-started image</span>
-$ podman run -d -p 8080:80 docker/getting-started
-798b8a5a02819ff3a0c942879ae21348a1343bd14741b27edb6422d5db3216b7
-
-<span style=color:#75715e># Listing containers</span>
-$ podman ps
-CONTAINER ID  IMAGE                                    COMMAND               CREATED        STATUS             PORTS                 NAMES
-798b8a5a0281  docker.io/docker/getting-started:latest  nginx -g daemon o...  <span style=color:#ae81ff>9</span> seconds ago  Up <span style=color:#ae81ff>10</span> seconds ago  0.0.0.0:8080-&gt;80/tcp  beautiful_northcutt
-</code></pre></div><p>And I configured the 80 port of the container to receive the request when a request is made to the 8080 port on the local.
-After the upper commands, we can check the getting-started page of Docker by connecting to http://localhost:8080</p>
-<p><img class=img-fluid alt="docker getting-started page" src=https://evir35.github.io/posts/docker-alternatives-podman/images/docker-getting-started-page.webp loading=lazy>
-</p>
-<h2 id=in-conclusion>In conclusion<a class="anchor ms-1" href=#in-conclusion><i class="fas fa-link"></i></a></h2>
-<p>From this post, we knew that it replaces the Docker desktop with Podman for free.
+It&rsquo;s enough to just convert the command from <code>docker</code> to <code>podman</code> in the Docker <code>getting started</code> document.</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-shell data-lang=shell><span style=display:flex><span><span style=color:#75715e># Create container using docker/getting-started image</span>
+</span></span><span style=display:flex><span>$ podman run -d -p 8080:80 docker/getting-started
+</span></span><span style=display:flex><span>798b8a5a02819ff3a0c942879ae21348a1343bd14741b27edb6422d5db3216b7
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#75715e># Listing containers</span>
+</span></span><span style=display:flex><span>$ podman ps
+</span></span><span style=display:flex><span>CONTAINER ID  IMAGE                                    COMMAND               CREATED        STATUS             PORTS                 NAMES
+</span></span><span style=display:flex><span>798b8a5a0281  docker.io/docker/getting-started:latest  nginx -g daemon o...  <span style=color:#ae81ff>9</span> seconds ago  Up <span style=color:#ae81ff>10</span> seconds ago  0.0.0.0:8080-&gt;80/tcp  beautiful_northcutt
+</span></span></code></pre></div><p>And I configured the 80 port of the container to receive the request when a request is made to the 8080 port on the local.
+After the upper commands, we can check the getting-started page of Docker by connecting to http://localhost:8080</p><p><img class=img-fluid alt="docker getting-started page" src=https://evir35.github.io/posts/docker-alternatives-podman/images/docker-getting-started-page.webp loading=lazy></p><h2 id=in-conclusion>In conclusion<a class="anchor ms-1" href=#in-conclusion><i class="fas fa-link"></i></a></h2><p>From this post, we knew that it replaces the Docker desktop with Podman for free.
 In my opinion, it&rsquo;s a good idea to manage virtual machines using the machine command.
-Let&rsquo;s take a look at the Podman if you&rsquo;re looking for a container management tool for commercial use.</p>
-</div></div>
-<div class=card-footer></div>
-</article><div class="card component row post-comments" id=post-comments>
-<div class=card-header>
-<h2 class=card-title>Comments</h2>
-</div>
-<div class=card-body><script src=https://utteranc.es/client.js repo=evir35/evir35.github.io issue-term=pathname label=comment theme=github-light crossorigin=anonymous async></script></div>
-</div></div>
-</div><aside class="col-lg-4 sidebar d-flex">
-<div class="container d-flex flex-column">
-<section class="card row text-center profile component">
-<div class=card-body>
-<div class="col-12 d-flex align-items-center justify-content-center"><img class="profile-avatar rounded-circle" alt=evir35 src=https://evir35.github.io/images/profile.webp loading=lazy width=600 height=600>
-</div>
-<div class="col-12 profile-meta"><div class=profile-name>evir35</div><div class=profile-bio>Cloud Engineer</div><div class=profile-location><i class="fas fa-fw fa-map-marker-alt"></i>Republic of Korea</div></div>
-</div>
-</section>
-<div class="post-toc row mb-4 card component" id=postTOC>
-<div class=card-header>
-<h2 class=card-title>Contents</h2>
-</div>
-<div class=card-body>
-<nav id=TableOfContents>
-<ul>
-<li><a href=#docker-desktop-is-paid-for-commercial-use>Docker desktop is paid for commercial use</a></li>
-<li><a href=#whats-a-podman>What&rsquo;s a Podman?</a></li>
-<li><a href=#environment>Environment</a></li>
-<li><a href=#install-podman>Install Podman</a></li>
-<li><a href=#a-machine-command-of-the-podman>A machine command of the Podman</a>
-<ul>
-<li><a href=#create-a-virtual-machine>Create a virtual machine</a></li>
-<li><a href=#boot-a-virtual-machine>Boot a virtual machine</a></li>
-</ul>
-</li>
-<li><a href=#deploy-contianer-to-virtual-machine>Deploy contianer to virtual machine</a></li>
-<li><a href=#in-conclusion>In conclusion</a></li>
-</ul>
-</nav>
-</div>
-</div><section class="recent-posts row card component">
-<div class=card-header>
-<h2 class=card-title>Recent Posts</h2>
-</div>
-<div class=card-body>
-<ul class=post-list><li>
-<a href=https://evir35.github.io/posts/docker-alternatives-podman/>Let's Podman!
-</a>
-</li></ul>
-</div>
-</section><section class="tags-taxonomies row card component">
-<div class=card-header>
-<h2 class=card-title>
-<a href=https://evir35.github.io/tags>Tags</a>
-</h2>
-</div>
-<div class=card-body>
-<div class=py-2><a href=https://evir35.github.io/tags/container/ class="badge rounded post-taxonomy" title=container>
-container</a><a href=https://evir35.github.io/tags/docker/ class="badge rounded post-taxonomy" title=docker>
+Let&rsquo;s take a look at the Podman if you&rsquo;re looking for a container management tool for commercial use.</p></div></div><div class=card-footer></div></article><div class="card component row post-comments" id=post-comments><div class=card-header><h2 class=card-title>Comments</h2></div><div class=card-body><script src=https://utteranc.es/client.js repo=evir35/evir35.github.io issue-term=pathname label=comment theme=github-light crossorigin=anonymous async></script></div></div></div></div><aside class="col-lg-4 sidebar d-flex"><div class="container d-flex flex-column"><section class="card row text-center profile component"><div class=card-body><div class="col-12 d-flex align-items-center justify-content-center"><img class="profile-avatar rounded-circle" alt=evir35 src=https://evir35.github.io/images/profile.webp loading=lazy width=600 height=600></div><div class="col-12 profile-meta"><div class=profile-name>evir35</div><div class=profile-bio>Cloud Engineer</div><div class=profile-location><i class="fas fa-fw fa-map-marker-alt"></i>Republic of Korea</div></div></div></section><div class="post-toc row mb-4 card component" id=postTOC><div class=card-header><h2 class=card-title>Contents</h2></div><div class=card-body><nav id=TableOfContents><ul><li><a href=#docker-desktop-is-paid-for-commercial-use>Docker desktop is paid for commercial use</a></li><li><a href=#whats-a-podman>What&rsquo;s a Podman?</a></li><li><a href=#environment>Environment</a></li><li><a href=#install-podman>Install Podman</a></li><li><a href=#a-machine-command-of-the-podman>A machine command of the Podman</a><ul><li><a href=#create-a-virtual-machine>Create a virtual machine</a></li><li><a href=#boot-a-virtual-machine>Boot a virtual machine</a></li></ul></li><li><a href=#deploy-contianer-to-virtual-machine>Deploy contianer to virtual machine</a></li><li><a href=#in-conclusion>In conclusion</a></li></ul></nav></div></div><section class="recent-posts row card component"><div class=card-header><h2 class=card-title>Recent Posts</h2></div><div class=card-body><ul class=post-list><li><a href=https://evir35.github.io/posts/docker-alternatives-podman/>Let's Podman!</a></li></ul></div></section><section class="tags-taxonomies row card component"><div class=card-header><h2 class=card-title><a href=https://evir35.github.io/tags>Tags</a></h2></div><div class=card-body><div class=py-2><a href=https://evir35.github.io/tags/container/ class="badge rounded post-taxonomy" title=container>container</a><a href=https://evir35.github.io/tags/docker/ class="badge rounded post-taxonomy" title=docker>
 docker</a><a href=https://evir35.github.io/tags/podman/ class="badge rounded post-taxonomy" title=podman>
-podman</a></div>
-</div>
-</section>
-</div>
-</aside>
-</div>
-</main><footer class="footer mt-auto py-3 text-center container"><nav class="social-links nav justify-content-center mb-2"><a class="nav-link social-link" href=mailto:evir35@gmail.com title=Email>
-<i class="fas fa-fw fa-2x fa-envelope"></i>
-</a><a class="nav-link social-link" target=_blank href=https://github.com/evir35 title=GitHub rel="noopener noreferrer">
-<i class="fa-fw fa-2x fab fa-github"></i>
-</a><a class="nav-link social-link" target=_blank href=https://linkedin.com/in/minhyeok-park-23316a1ba title=LinkedIn rel="noopener noreferrer">
-<i class="fa-fw fa-2x fab fa-linkedin-in"></i>
-</a></nav>
-<div class="copyright mb-2">
-Copyright © 2022 - 2022 evir35. All Rights Reserved.
-</div>
-<div class="powered-by mb-2">
-Powered by <a href=https://gohugo.io target=_blank rel="noopener noreferrer">Hugo</a> and the <a href=https://github.com/razonyang/hugo-theme-bootstrap target=_blank rel="noopener noreferrer">Bootstrap</a> theme.
-</div></footer>
-<script src=https://evir35.github.io/js/main.e9c59f86e964245833b4657c9db847e00947850b3482e31244375a4479b54224.js integrity="sha256-6cWfhulkJFgztGV8nbhH4AlHhQs0guMSRDdaRHm1QiQ=" crossorigin=anonymous defer></script><script src=https://evir35.github.io/js/icons.min.8ddcaafc364ff0296c2209c5495287f0de039b852da9b24847f94c198b7639b6.js integrity="sha256-jdyq/DZP8ClsIgnFSVKH8N4Dm4UtqbJIR/lMGYt2ObY=" crossorigin=anonymous defer></script>
-<script src=https://evir35.github.io/js/viewer.min.652118a9fbf3403cdfde4026209f97ace22f9e334f0b45a33431a221b3db46a8.js integrity="sha256-ZSEYqfvzQDzf3kAmIJ+XrOIvnjNPC0WjNDGiIbPbRqg=" crossorigin=anonymous defer></script>
+podman</a></div></div></section></div></aside></div></main><footer class="footer mt-auto py-3 text-center container"><nav class="social-links nav justify-content-center mb-2"><a class="nav-link social-link" href=mailto:evir35@gmail.com title=Email><i class="fas fa-fw fa-2x fa-envelope"></i>
+</a><a class="nav-link social-link" target=_blank href=https://github.com/evir35 title=GitHub rel="noopener noreferrer"><i class="fa-fw fa-2x fab fa-github"></i>
+</a><a class="nav-link social-link" target=_blank href=https://linkedin.com/in/minhyeok-park-23316a1ba title=LinkedIn rel="noopener noreferrer"><i class="fa-fw fa-2x fab fa-linkedin-in"></i></a></nav><div class="copyright mb-2">Copyright © 2022 - 2022 evir35. All Rights Reserved.</div><div class="powered-by mb-2">Powered by <a href=https://gohugo.io target=_blank rel="noopener noreferrer">Hugo</a> and the <a href=https://github.com/razonyang/hugo-theme-bootstrap target=_blank rel="noopener noreferrer">Bootstrap</a> theme.</div></footer><script src=https://evir35.github.io/js/main.e9c59f86e964245833b4657c9db847e00947850b3482e31244375a4479b54224.js integrity="sha256-6cWfhulkJFgztGV8nbhH4AlHhQs0guMSRDdaRHm1QiQ=" crossorigin=anonymous defer></script><script src=https://evir35.github.io/js/icons.min.acdbd59936764a801998a13fb1741d76453c42dc9aeee26251a97b5a9ff679bb.js integrity="sha256-rNvVmTZ2SoAZmKE/sXQddkU8Qtya7uJiUal7Wp/2ebs=" crossorigin=anonymous defer></script>
+<script src=https://evir35.github.io/js/viewer.min.7781ba4e24db35cc3033a16118f338140fbb6694360d281e18a5928a4d16d54a.js integrity="sha256-d4G6TiTbNcwwM6FhGPM4FA+7ZpQ2DSgeGKWSik0W1Uo=" crossorigin=anonymous defer></script>
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-S7LE5396CB"></script>
-<script>var doNotTrack=!1;if(!doNotTrack){window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date),gtag('config','G-S7LE5396CB',{anonymize_ip:!1})}</script>
-</body>
-</html>
+<script>var doNotTrack=!1;if(!doNotTrack){window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag("js",new Date),gtag("config","G-S7LE5396CB",{anonymize_ip:!1})}</script></body></html>
