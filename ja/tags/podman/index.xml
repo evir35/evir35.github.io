@@ -12,4 +12,4 @@ Podmanとは？ PodmanはDocker CLIで使うほとんどのcommandが互換性�
 環境設定 今回のpostで使ったlocal環境は下記のような環境です。
 Machine: Macbook Pro (16-inchim, 2021), Apple M1 Pro OS: MacOS Monterey 12.1 Install Podman Macではhomebrewを使って簡単にインストールできます。
 brew install podman 上のコマンドでインストールした後、versioncommandを使ってインストールされたPodmanのバージョンを確認することができます。
-$ podman version Client： Version: 3.4.4 API Version: 3.4.4 Go Version: go1.17.6 構築日: Thu Dec 9 03:41:11 2021 OS/Arch: darwin/arm64 サーバー バージョン: 3.</description></item></channel></rss>
+$ podman version Client: Version: 3.4.4 API Version: 3.4.4 Go Version: go1.17.6 Built: Thu Dec 9 03:41:11 2021 OS/Arch: darwin/arm64 Server: Version: 3.</description></item></channel></rss>
