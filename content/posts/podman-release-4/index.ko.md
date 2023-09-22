@@ -24,7 +24,7 @@ OS: MacOS Monterey 12.1
 
 ## Podman upgrade
 
-[이전 post]({{< ref "/posts/docker-alternatives-podman/index.ko.md" >}})에서도 보셨겠지만 Mac에서는 [Homebrew](https://brew.sh/index_ko)를 이용해 간단하게 upgrade가 가능합니다.
+[이전 post](/posts/docker-alternatives-podman/index.ko.md)에서도 보셨겠지만 Mac에서는 [Homebrew](https://brew.sh/index_ko)를 이용해 간단하게 upgrade가 가능합니다.
 
 ```sh
 brew upgrade podman
