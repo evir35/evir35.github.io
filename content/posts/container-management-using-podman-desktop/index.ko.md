@@ -47,7 +47,7 @@ podman이 자동으로 설치되고 나서 아래와 같은 창이 뜨게 되고
 
 ![podman installation end](images/podman-install-end.webp)
 
-podman이 설치되고 나면, podman machine을 설정해 줍니다. 아쉽게도 podman에서는 [Windows Container](https://learn.microsoft.com/en-us/virtualization/windowscontainers/about/)를 지원하지 않아서 podman machine을 통해서 linux VM을 생성하고, 해당 VM에서 container를 실행시키는 방식을 사용합니다. 그래서 VM의 이름과 cpu, memory, disk size 등을 설정해 줍니다.
+podman이 설치되고 나면, podman machine을 설정해 줍니다. 아쉽게도 podman에서는 [Windows Container](https://learn.microsoft.com/en-us/virtualization/windowscontainers/about/)를 지원하지 않아서 podman machine을 통해서 linux VM을 생성하고, 해당 VM에서 container를 실행시키는 방식을 사용합니다. VM을 사용하기 위해서 VM의 이름과 cpu, memory, disk size 등을 설정해 줍니다.
 
 ![podman machine setup](images/podman-desktop-machine-setup.webp)
 
@@ -55,17 +55,17 @@ podman이 설치되고 나면, podman machine을 설정해 줍니다. 아쉽게�
 
 ![podman machine setup completed](images/podman-desktop-machine-setup-end.webp)
 
-위 과정까지 완료되면 podman 설정이 완료되고 `Settings > Resources`에서 아래처럼 podman machine 사용량이 보이고, 현재 동작중인지 등의 상태 등을 확인하실 수 있습니다. `Podman Machine` 글자 옆을 누르면 좀 더 큰 창에서 자세히 상태 및 로그를 확인 할수 있습니다.
+위 과정까지 완료되면 podman 설정이 완료되고 `Settings > Resources`에서 아래처럼 podman machine 사용량이 보이고, 현재 동작 중인지 등의 상태 등을 확인하실 수 있습니다. `Podman Machine` 글자 옆을 누르면 좀 더 큰 창에서 자세히 상태 및 로그를 확인하실 수 있습니다.
 
 ## Podman Desktop으로 Pod 생성해보기
 
 ![podman resources after install podman](images/podman-desktop-resources-after-install.webp)
 
-그러면 왼쪽 편 위에서 두번 째 아이콘을 클릭하면 현재 생성되어 있는 container를 확인할 수 있는 page가 나옵니다. 물론, 지금은 생성한 container가 없어서 아예 빈 창으로 나오게 됩니다.
+그러면 왼쪽 위에서 두 번째 아이콘을 클릭하면 현재 생성되어 있는 container를 확인할 수 있는 page가 나옵니다. 물론, 지금은 생성한 container가 없어서 아예 빈 창으로 나오게 됩니다.
 
 ![podman desktop containers](images/podman-desktop-containers-after-install.webp)
 
-container를 생성하기 위해서 오른쪽 편에 `Create a container`를 눌러봅시다.
+container를 생성하기 위해서 오른쪽에 `Create a container`를 눌러봅시다.
 
 ![podman desktop containers](images/podman-desktop-create-container.webp)
 
@@ -99,7 +99,7 @@ pull이 완료되고 나면 `quay.io/podman/hello` image가 `Images` page 목록
 
 ![](images/podman-desktop-containers-list-after-creation-hello-container.webp)
 
-다시 왼쪽 위에서 두번째 버튼을 클릭하면 현재 존재하는 container 목록이 나오고 저희가 생성한 hello container가 보입니다. log만 출력하고 완료되다보니 `EXITED`로 현재는 container가 종료된 상태인 것을 보실 수 있습니다. 테스트가 끝났으니 오른쪽 편에 휴지통 버튼을 누르시면 container를 삭제하실 수 있습니다.
+다시 왼쪽 위에서 두번 째 버튼을 클릭하면 현재 존재하는 container 목록이 나오고 저희가 생성한 hello container가 보입니다. log만 출력하고 완료되다보니 `EXITED`로 현재는 container가 종료된 상태인 것을 보실 수 있습니다. 테스트가 끝났으니 오른쪽 편에 휴지통 버튼을 누르시면 container를 삭제하실 수 있습니다.
 
 ## Podman Desktop으로 [NGINX](https://www.nginx.com/) 띄워보기
 
@@ -115,11 +115,11 @@ container image pull이 성공할 경우 위처럼 `Download complete`가 뜨게
 
 ![podman-image-list-nginx](images/podman-image-list-nginx.webp)
 
-이제 `Images`에서 `nginx` image 오른쪽 편에 삼각형 버튼을 눌러서 해당 `nginx` container image로 container를 생성해봅시다.
+이제 `Images`에서 `nginx` image 오른쪽 편에 삼각형 버튼을 눌러서 해당 `nginx` container image로 container를 생성해 봅시다.
 
 ![podman-create-nginx-container-without-change](images/podman-create-nginx-container-without-change.webp)
 
-우선은 `Port mapping` 쪽을 보면 자동으로 port가 입력되어 있습니다. 이건 `nginx` dockerfile에 `EXPOSE` 명령어로 80 port로 port가 노출될 것이 명시되어 있으므로 podman desktop에서 자동으로 해당 80 port와 local machine의 9000 port가 mapping되도록 설정해줍니다. 혹시 다른 port로 호출하고 싶다면 9000이 아닌 다른 값을 설정해주시면 됩니다. 그 이외의 다른 부분은 수정 없이 `Start Container`로 container를 생성해봅시다.
+우선은 `Port mapping` 쪽을 보면 자동으로 port가 입력되어 있습니다. 이건 `nginx` dockerfile에 `EXPOSE` 명령어로 80 port로 port가 노출될 것이 명시되어 있으므로 podman desktop에서 자동으로 해당 80 port와 local machine의 9000 port가 mapping되도록 설정해줍니다. 혹시 다른 port로 호출하고 싶다면 9000이 아닌 다른 값을 설정해주시면 됩니다. 그 이외의 다른 부분은 수정 없이 `Start Container`로 container를 생성해 봅시다.
 
 ![podman-nginx-container-log-without-change](images/podman-nginx-container-log-without-change.webp)
 
